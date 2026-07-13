@@ -11,19 +11,19 @@ jobs:
 
     steps:
       - name: Ping Project 1
-        run: curl -I https://wmqkbwcholvnbpnuqnzm.supabase.co
+        run: curl -I https://wmqkbwcholvnbpnuqnzm.supabase.co/rest/v1/
 
       - name: Ping Project 2
-        run: curl -I https://aovyugcxrrkjkzauoomb.supabase.co
+        run: curl -I https://aovyugcxrrkjkzauoomb.supabase.co/rest/v1/
 
       - name: Ping Project 3
-        run: curl -I https://kcueevrfdkbvkgjpyzuo.supabase.co
+        run: curl -I https://kcueevrfdkbvkgjpyzuo.supabase.co/rest/v1/
 
       - name: Ping Project 4
-        run: curl -I https://cdhykgvciawzfubalxdu.supabase.co
+        run: curl -I https://cdhykgvciawzfubalxdu.supabase.co/rest/v1/
 
       - name: Ping Project 5
-        run: curl -I https://epsygtwxjbqrxseerglh.supabase.co
+        run: curl -I https://epsygtwxjbqrxseerglh.supabase.co/rest/v1/
 
       - name: Ping Project 6
-        run: curl -I https://hoxkdprdovurlvfyzpdo.supabase.co
+        run: curl -I https://hoxkdprdovurlvfyzpdo.supabase.co/rest/v1/
