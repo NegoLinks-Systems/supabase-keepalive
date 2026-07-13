@@ -13,22 +13,22 @@ jobs:
       matrix:
         project:
           - url: https://wmqkbwcholvnbpnuqnzm.supabase.co
-            key: SUPABASE_KEY_1
+            key: sb_publishable_Rsa06E6MYWBjRHJu5i51LQ_XcyvOm_N
 
           - url: https://aovyugcxrrkjkzauoomb.supabase.co
-            key: SUPABASE_KEY_2
-
-          - url: https://kcueevrfdkbvkgjpyzuo.supabase.co
-            key: SUPABASE_KEY_3
+            key: sb_publishable_MQIZYVhQiMHM88OREMBuUg_68kYZJRW
 
           - url: https://cdhykgvciawzfubalxdu.supabase.co
-            key: SUPABASE_KEY_4
+            key: sb_publishable_JBWzwZysYU4spCmAj257SQ_NZO8oTgM
 
           - url: https://epsygtwxjbqrxseerglh.supabase.co
-            key: SUPABASE_KEY_5
+            key: sb_publishable_dgR5sCUzfjfLiuvEgxjL0w_VosRuBkO
+
+          - url: https://kcueevrfdkbvkgjpyzuo.supabase.co
+            key: sb_publishable_m7h5UBxY2qu6myFnXM34bA_50__huq_
 
           - url: https://hoxkdprdovurlvfyzpdo.supabase.co
-            key: SUPABASE_KEY_6
+            key: sb_publishable_HZzuuGqWnWpfREcnLX7m5w_zuYQv-SE
 
     steps:
       - name: Wake ${{ matrix.project.url }}
