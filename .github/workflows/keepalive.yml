@@ -6,24 +6,44 @@ on:
   workflow_dispatch:
 
 jobs:
-  ping:
+  keepalive:
     runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        project:
+          - url: https://wmqkbwcholvnbpnuqnzm.supabase.co
+            key: SUPABASE_KEY_1
+
+          - url: https://aovyugcxrrkjkzauoomb.supabase.co
+            key: SUPABASE_KEY_2
+
+          - url: https://kcueevrfdkbvkgjpyzuo.supabase.co
+            key: SUPABASE_KEY_3
+
+          - url: https://cdhykgvciawzfubalxdu.supabase.co
+            key: SUPABASE_KEY_4
+
+          - url: https://epsygtwxjbqrxseerglh.supabase.co
+            key: SUPABASE_KEY_5
+
+          - url: https://hoxkdprdovurlvfyzpdo.supabase.co
+            key: SUPABASE_KEY_6
+
     steps:
-      - name: Ping Project 1
-        run: curl -I https://wmqkbwcholvnbpnuqnzm.supabase.co/rest/v1/
+      - name: Wake ${{ matrix.project.url }}
+        env:
+          API_KEY: ${{ secrets[matrix.project.key] }}
+          PROJECT_URL: ${{ matrix.project.url }}
+        run: |
+          echo "Pinging $PROJECT_URL"
 
-      - name: Ping Project 2
-        run: curl -I https://aovyugcxrrkjkzauoomb.supabase.co/rest/v1/
+          curl --silent --show-error --fail \
+            --request GET \
+            "$PROJECT_URL/rest/v1/" \
+            --header "apikey: $API_KEY" \
+            --header "Authorization: Bearer $API_KEY" \
+            --header "Accept: application/json"
 
-      - name: Ping Project 3
-        run: curl -I https://kcueevrfdkbvkgjpyzuo.supabase.co/rest/v1/
-
-      - name: Ping Project 4
-        run: curl -I https://cdhykgvciawzfubalxdu.supabase.co/rest/v1/
-
-      - name: Ping Project 5
-        run: curl -I https://epsygtwxjbqrxseerglh.supabase.co/rest/v1/
-
-      - name: Ping Project 6
-        run: curl -I https://hoxkdprdovurlvfyzpdo.supabase.co/rest/v1/
+          echo ""
+          echo "Success!"
